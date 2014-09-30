@@ -1,0 +1,80 @@
+html{
+    background: url('images/purty_wood.png');
+ }
+
+#mainBody {
+    height: 8px;
+    width: 100%;
+    background-color: #4c1a00;
+}
+
+#wrapper{
+	width: 550px;
+    height: 330px;
+    margin-left: auto;
+    margin-right: auto;
+	position: relative;
+    background-color: aliceblue;
+    border-radius: 25px;
+    margin-top: 60px;
+     
+}
+
+h1 {
+    font-size: 68px;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #4c1a00;
+}
+#login {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 75px;
+    padding-left: 100px;
+    font-size: 24px;
+    color: #4c1a00;
+    
+}
+ #password,#username {
+    width: 150px;
+    margin-left: 6px;
+    padding-left: 10px;
+    display: inline-block;
+    font-size: 18px;
+    display: inline-block;    
+}
+
+ #username:hover{
+    box-shadow: 0px 0px 5px #61C5FA;
+}
+
+#password:hover{
+    box-shadow: 0px 0px 5px #61C5FA;
+}
+
+#username:focus{
+    box-shadow: 0px 0px 5px #61C5FA;
+}
+
+#password:focus{
+    box-shadow: 0px 0px 5px #61C5FA;
+}
+label {
+    text-align: left;
+    display: inline-block;
+    padding-right: 15px;
+    min-width: 100px; 
+}
+#btnLogin  {
+    background-color: #4C1A00;
+    float: right;
+    margin-right: 75px;
+    color: #FFFFCB;
+    font-size: 26px;
+    border-radius: 11px;
+    font-family: sans-serif;
+    width: 140px;
+    height: 50px;
+    margin-top: 50px;
+    border: 0;
+}
