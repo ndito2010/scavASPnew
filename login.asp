@@ -42,7 +42,7 @@
           RecordSet.Close
           Set RecordSet = Nothing
           
-          oConn.Closw
+          oConn.Close
           Set oConn = Nothing
           
 
