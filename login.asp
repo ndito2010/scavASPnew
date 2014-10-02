@@ -5,19 +5,32 @@
 
 '******************
 'ASP Database Connection
- Dim Connection
- Dim ConnectionString
+ Dim oConn
+ Dim ConnectionStr
  Dim RecordSet
  Dim strSQL
  Dim strUsername
  Dim strPassword
-
- strUsername = Request.form("txtName")
- strPassword = Request.Form("txtPassword")
+ Dim db_name, db_username, db_password, db_server
+ 
+ 'Connecting to the database
+ 	db_name = "res_scavenger"
+ 	db_server = "localhost"
+        db_username = "magrets"
+        db_password = "safiuna86"
+  
+  ConnectionStr = "DRIVER=mysql;SERVER"= & db_server & "; UID=" & db_username & "; PWD=" & db_password & "; DATABASE=" & db_name
+ 	Set oConn = Server.CreateObject ("ADODB.Connection")
+  	oConn.Open ConnectionStr
+  	
+	 strUsername = Request.form("txtName")
+	 strPassword = Request.Form("txtPassword")
 
  
  strSQL = "SELECT * FROM admin WHERE username = " & strUsername & " AND  password = " & strPassword
-  
+ ' Set RecordSet= Server.CreateObject("ADODB.Recordset")
+  '	RecordSet.Open (strSQL,oConn)
+  	
     Set RecordSet = Conn.execute(strSQL)
         'If the recordset is not empty the user is validated
         If Not RecordSet.EOF Then
@@ -26,6 +39,12 @@
         else
             Response.Redirect("main_login.php")
         End If
+          RecordSet.Close
+          Set RecordSet = Nothing
+          
+          oConn.Closw
+          Set oConn = Nothing
+          
 
 		'// username and password sent from form 
 		'$myusername=$_POST['username'];     
